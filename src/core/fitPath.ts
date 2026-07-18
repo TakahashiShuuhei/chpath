@@ -91,12 +91,12 @@ function fitPoints(points: Point[], tolerance: number): Segment[] {
   }
 
   // どちらも許容誤差に収まらない場合、最も誤差の大きい点で分割して再帰する
+  // (arcの場合、半径方向の誤差だけでなく「startAngle~endAngleの範囲外に
+  // 出てしまう点」も誤差Infinityとして扱い、優先的にそこで分割する)
   let splitIdx = midIdx;
   let worst = -Infinity;
   for (let i = 1; i < points.length - 1; i++) {
-    const e = arc
-      ? Math.abs(dist(points[i], arc.center) - arc.radius)
-      : perpendicularDistance(points[i], p0, p1);
+    const e = arc ? arcPointError(points[i], arc) : perpendicularDistance(points[i], p0, p1);
     if (e > worst) {
       worst = e;
       splitIdx = i;
@@ -128,10 +128,30 @@ function maxDistanceFromChord(points: Point[], from: Point, to: Point): number {
 function maxDistanceFromArc(points: Point[], arc: ArcSeg): number {
   let max = 0;
   for (const p of points) {
-    const d = Math.abs(dist(p, arc.center) - arc.radius);
+    const d = arcPointError(p, arc);
     if (d > max) max = d;
   }
   return max;
+}
+
+/**
+ * 点pが円弧arcにどれだけ近いかを返す。半径方向の距離だけでなく、
+ * 角度がstartAngle~endAngleの範囲(ccwで決まる向き)に収まっているかも見る。
+ * 範囲外(円の反対側など)にある場合はInfinityを返し、その弧が
+ * 不適格であることを示す。これがないと、半径だけ合っていて実際には
+ * 全く違う場所を指す弧(輪になった曲線で特に起きやすい)を許容してしまう。
+ */
+function arcPointError(p: Point, arc: ArcSeg): number {
+  const radial = Math.abs(dist(p, arc.center) - arc.radius);
+
+  const norm = (a: number) => ((a % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+  const totalSweep = arc.ccw ? norm(arc.endAngle - arc.startAngle) : norm(arc.startAngle - arc.endAngle);
+  const angle = Math.atan2(p.y - arc.center.y, p.x - arc.center.x);
+  const sweepToP = arc.ccw ? norm(angle - arc.startAngle) : norm(arc.startAngle - angle);
+
+  const OVERSHOOT_EPS = 1e-6;
+  if (sweepToP > totalSweep + OVERSHOOT_EPS) return Infinity;
+  return radial;
 }
 
 /** 始点・中間点・終点を通る円弧を求める(3点が共線に近い場合はnull) */

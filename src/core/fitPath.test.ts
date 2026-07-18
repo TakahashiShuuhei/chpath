@@ -92,6 +92,48 @@ describe('fitPointsToStroke', () => {
     });
   });
 
+  describe('前提: 点列が円のほぼ全周(360度近く)をなぞるループ状の場合', () => {
+    // 数字の6や9のように、曲線が輪になって元の位置近くまで戻ってくるケース。
+    // 半径方向の誤差だけを見ていると、実際には範囲外(円の反対側)の点まで
+    // 「同じ円の上にある」という理由だけで許容してしまい、start/endAngleの
+    // 範囲がほぼ0の退化した円弧を返してしまうことがあった(実際に描かれる
+    // 曲線がほとんど欠落するバグ)。
+    it('操作: fitPointsToStrokeする / 期待: 角度範囲がほぼ0の退化した円弧にはならない', () => {
+      const radius = 10;
+      const points: Point[] = [];
+      for (let deg = 0; deg <= 350; deg += 10) {
+        const rad = (deg * Math.PI) / 180;
+        points.push({ x: radius * Math.cos(rad), y: radius * Math.sin(rad) });
+      }
+      const stroke = fitPointsToStroke(points, 0.5);
+      for (const seg of stroke) {
+        if (seg.type === 'arc') {
+          const span = Math.abs(seg.endAngle - seg.startAngle);
+          expect(span).toBeGreaterThan(0.05);
+        }
+      }
+    });
+
+    it('期待: 分割されても各セグメントの端点はつながっており、全体の始点・終点は元の点列と一致する', () => {
+      const radius = 10;
+      const points: Point[] = [];
+      for (let deg = 0; deg <= 350; deg += 10) {
+        const rad = (deg * Math.PI) / 180;
+        points.push({ x: radius * Math.cos(rad), y: radius * Math.sin(rad) });
+      }
+      const stroke = fitPointsToStroke(points, 0.5);
+      const closePoint = (a: Point, b: Point) => {
+        expect(a.x).toBeCloseTo(b.x, 3);
+        expect(a.y).toBeCloseTo(b.y, 3);
+      };
+      for (let i = 1; i < stroke.length; i++) {
+        closePoint(segEnd(stroke[i - 1]), segStart(stroke[i]));
+      }
+      closePoint(segStart(stroke[0]), points[0]);
+      closePoint(segEnd(stroke[stroke.length - 1]), points[points.length - 1]);
+    });
+  });
+
   describe('前提: 直角に折れ曲がる点列(1本の直線・円弧では表現できない)の場合', () => {
     const points: Point[] = [
       { x: 0, y: 0 },
