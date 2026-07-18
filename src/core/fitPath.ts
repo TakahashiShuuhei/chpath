@@ -93,6 +93,18 @@ function fitPoints(points: Point[], tolerance: number): Segment[] {
     return [{ type: 'line', from: p0, to: p1 }];
   }
 
+  if (points.length === 3) {
+    // 点が3つしかない場合、中間点を含む3点は円が幾何学的に必ず誤差0で
+    // 通ってしまい、それが本当に円弧なのか単に鋭い角(直線同士の接続点)
+    // なのかを円弧フィッティングでは判別できない。直線1本では収まらない
+    // と分かった以上、ここでは中間点を角とみなして2本の直線に分ける
+    // (点が足りず円弧として検証できないケースなので、円弧化は行わない)。
+    return [
+      { type: 'line', from: p0, to: points[1] },
+      { type: 'line', from: points[1], to: p1 },
+    ];
+  }
+
   const midIdx = Math.floor((points.length - 1) / 2);
   const arc = fitArc(p0, points[midIdx], p1);
   const arcErr = arc ? maxDistanceFromArc(points, arc) : Infinity;
@@ -135,11 +147,37 @@ function maxDistanceFromChord(points: Point[], from: Point, to: Point): number {
   return max;
 }
 
+/**
+ * 点列が候補の円弧arcにどれだけ近いかを返す。各点の半径方向の誤差・
+ * 角度範囲だけでなく、点の並び順どおりに角度が単調に進んでいるかも見る。
+ *
+ * 角度範囲チェックだけでは、鋭い角(直線同士の接続点)の近くにたまたま
+ * 小さな円が誤って当てはまってしまうケースを防げない。3点(始点・中間点・
+ * 終点)から作った円は、点の並び順と円周上での角度の並び順が食い違って
+ * いても(中間点が「始点から終点への短い側」ではなく「長い側」にあると
+ * 判定されても)、その3点自体は誤差0で一致してしまう。結果、半径は小さい
+ * のに円をほぼ1周(200度超)するような不自然な円弧が「許容誤差内」と
+ * 誤判定され、角がちいさなループ状の弧に化けてしまうことがあった。
+ * 点の角度が並び順どおりに単調に増加(または減少)しているかを追加で
+ * チェックし、後退している場合はInfinityを返してこの弧を不適格とする。
+ */
 function maxDistanceFromArc(points: Point[], arc: ArcSeg): number {
+  const norm = (a: number) => ((a % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+  const totalSweep = arc.ccw ? norm(arc.endAngle - arc.startAngle) : norm(arc.startAngle - arc.endAngle);
+  const MONOTONIC_EPS = 1e-6;
+
   let max = 0;
+  let prevSweep = -Infinity;
   for (const p of points) {
-    const d = arcPointError(p, arc);
-    if (d > max) max = d;
+    const radial = Math.abs(dist(p, arc.center) - arc.radius);
+    const angle = Math.atan2(p.y - arc.center.y, p.x - arc.center.x);
+    const sweepToP = arc.ccw ? norm(angle - arc.startAngle) : norm(arc.startAngle - angle);
+
+    if (sweepToP > totalSweep + MONOTONIC_EPS) return Infinity; // 弧の範囲外
+    if (sweepToP < prevSweep - MONOTONIC_EPS) return Infinity; // 角度が後退(単調でない)
+    prevSweep = sweepToP;
+
+    if (radial > max) max = radial;
   }
   return max;
 }

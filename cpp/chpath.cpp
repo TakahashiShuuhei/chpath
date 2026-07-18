@@ -343,9 +343,8 @@ static const Segment seg_g00032[] = {
 static const int len_g00032[] = {6};
 
 static const Segment seg_g00033[] = {
-{Segment::Type::Line,{208.33,41.67},{575,41.67},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{620.835,59.372},49.135,-2.773,1.656,true},
-{Segment::Type::Line,{616.67,108.33},{416.67,375},{},0,0,0,false},
+{Segment::Type::Line,{208.33,41.67},{666.67,41.67},{},0,0,0,false},
+{Segment::Type::Line,{666.67,41.67},{416.67,375},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{469.543,633.055},263.416,-1.773,-0.725,true},
 {Segment::Type::Line,{666.67,458.33},{691.67,533.33},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{397.855,628.176},308.744,-0.312,0.926,true},
@@ -355,16 +354,15 @@ static const Segment seg_g00033[] = {
 {Segment::Type::Arc,{},{},{354.27,687.435},237.653,2.232,2.875,true}
 };
 
-static const int len_g00033[] = {10};
+static const int len_g00033[] = {9};
 
 static const Segment seg_g00034[] = {
-{Segment::Type::Line,{541.67,41.67},{208.33,508.33},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{187.5,581.546},76.122,-1.294,0.608,false},
-{Segment::Type::Line,{250,625},{750,625},{},0,0,0,false},
+{Segment::Type::Line,{541.67,41.67},{125,625},{},0,0,0,false},
+{Segment::Type::Line,{125,625},{750,625},{},0,0,0,false},
 {Segment::Type::Line,{541.67,41.67},{541.67,916.67},{},0,0,0,false}
 };
 
-static const int len_g00034[] = {3,1};
+static const int len_g00034[] = {2,1};
 
 static const Segment seg_g00035[] = {
 {Segment::Type::Line,{625,41.67},{208.33,41.67},{},0,0,0,false},
@@ -492,12 +490,11 @@ static const Segment seg_g0003b[] = {
 static const int len_g0003b[] = {5,7};
 
 static const Segment seg_g0003c[] = {
-{Segment::Type::Line,{833.33,166.67},{300,466.67},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{254.429,541.67},87.759,-1.025,1.025,false},
-{Segment::Type::Line,{300,616.67},{833.33,916.67},{},0,0,0,false}
+{Segment::Type::Line,{833.33,166.67},{166.67,541.67},{},0,0,0,false},
+{Segment::Type::Line,{166.67,541.67},{833.33,916.67},{},0,0,0,false}
 };
 
-static const int len_g0003c[] = {3};
+static const int len_g0003c[] = {2};
 
 static const Segment seg_g0003d[] = {
 {Segment::Type::Line,{166.67,416.67},{916.67,416.67},{},0,0,0,false},
@@ -507,12 +504,11 @@ static const Segment seg_g0003d[] = {
 static const int len_g0003d[] = {1,1};
 
 static const Segment seg_g0003e[] = {
-{Segment::Type::Line,{166.67,166.67},{700,466.67},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{745.571,541.67},87.759,-2.117,2.117,true},
-{Segment::Type::Line,{700,616.67},{166.67,916.67},{},0,0,0,false}
+{Segment::Type::Line,{166.67,166.67},{833.33,541.67},{},0,0,0,false},
+{Segment::Type::Line,{833.33,541.67},{166.67,916.67},{},0,0,0,false}
 };
 
-static const int len_g0003e[] = {3};
+static const int len_g0003e[] = {2};
 
 static const Segment seg_g0003f[] = {
 {Segment::Type::Arc,{},{},{338.143,253.89},213.178,-3.123,-1.476,true},
@@ -579,12 +575,11 @@ static const Segment seg_g00042[] = {
 {Segment::Type::Line,{591.67,475},{666.67,500},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{520.73,687.565},237.653,-0.91,-0.266,true},
 {Segment::Type::Arc,{},{},{491.945,677.873},263.416,-0.202,0.846,true},
-{Segment::Type::Line,{666.67,875},{566.67,908.33},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{504.17,762.62},158.549,1.166,1.81,true},
-{Segment::Type::Line,{466.67,916.67},{166.67,916.67},{},0,0,0,false}
+{Segment::Type::Line,{666.67,875},{541.67,916.67},{},0,0,0,false},
+{Segment::Type::Line,{541.67,916.67},{166.67,916.67},{},0,0,0,false}
 };
 
-static const int len_g00042[] = {1,4,8};
+static const int len_g00042[] = {1,4,7};
 
 static const Segment seg_g00043[] = {
 {Segment::Type::Arc,{},{},{397.53,394.14},380.803,-0.388,-1.183,false},
@@ -966,18 +961,16 @@ static const int len_g00065[] = {10};
 
 static const Segment seg_g00066[] = {
 {Segment::Type::Arc,{},{},{375,229.19},192.094,-1.352,-2.279,false},
-{Segment::Type::Line,{250,83.33},{216.67,183.33},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{462.305,279.165},263.668,-2.77,2.87,false},
-{Segment::Type::Line,{208.33,350},{208.33,916.67},{},0,0,0,false},
+{Segment::Type::Line,{250,83.33},{208.33,208.33},{},0,0,0,false},
+{Segment::Type::Line,{208.33,208.33},{208.33,916.67},{},0,0,0,false},
 {Segment::Type::Line,{83.33,333.33},{375,333.33},{},0,0,0,false}
 };
 
-static const int len_g00066[] = {4,1};
+static const int len_g00066[] = {3,1};
 
 static const Segment seg_g00067[] = {
-{Segment::Type::Line,{625,333.33},{625,866.67},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{383.245,933.335},250.778,-0.269,0.374,true},
-{Segment::Type::Line,{616.67,1025},{583.33,1125},{},0,0,0,false},
+{Segment::Type::Line,{625,333.33},{625,1000},{},0,0,0,false},
+{Segment::Type::Line,{625,1000},{583.33,1125},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{402.826,973.448},235.69,0.698,1.654,true},
 {Segment::Type::Arc,{},{},{375.688,998.602},209.867,1.534,2.213,true},
 {Segment::Type::Line,{625,458.33},{575,408.33},{},0,0,0,false},
@@ -991,7 +984,7 @@ static const Segment seg_g00067[] = {
 {Segment::Type::Arc,{},{},{383.231,630.321},290.665,1.743,0.588,false}
 };
 
-static const int len_g00067[] = {5,9};
+static const int len_g00067[] = {4,9};
 
 static const Segment seg_g00068[] = {
 {Segment::Type::Line,{166.67,41.67},{166.67,916.67},{},0,0,0,false},
@@ -1018,13 +1011,12 @@ static const Segment seg_g0006a[] = {
 {Segment::Type::Line,{250,83.33},{291.67,41.67},{},0,0,0,false},
 {Segment::Type::Line,{291.67,41.67},{250,0},{},0,0,0,false},
 {Segment::Type::Line,{250,0},{208.33,41.67},{},0,0,0,false},
-{Segment::Type::Line,{250,333.33},{250,900},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{-4.27,970.835},263.952,-0.272,0.372,true},
-{Segment::Type::Line,{241.67,1066.67},{208.33,1166.67},{},0,0,0,false},
+{Segment::Type::Line,{250,333.33},{250,1041.67},{},0,0,0,false},
+{Segment::Type::Line,{250,1041.67},{208.33,1166.67},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{83.335,1020.82},192.083,0.862,1.789,true}
 };
 
-static const int len_g0006a[] = {4,4};
+static const int len_g0006a[] = {4,3};
 
 static const Segment seg_g0006b[] = {
 {Segment::Type::Line,{166.67,41.67},{166.67,916.67},{},0,0,0,false},
@@ -1137,14 +1129,13 @@ static const Segment seg_g00073[] = {
 static const int len_g00073[] = {15};
 
 static const Segment seg_g00074[] = {
-{Segment::Type::Line,{208.33,41.67},{208.33,608.33},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{462.305,679.165},263.668,-2.87,2.77,false},
-{Segment::Type::Line,{216.67,775},{250,875},{},0,0,0,false},
+{Segment::Type::Line,{208.33,41.67},{208.33,750},{},0,0,0,false},
+{Segment::Type::Line,{208.33,750},{250,875},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{375,729.185},192.06,2.279,1.352,false},
 {Segment::Type::Line,{83.33,333.33},{375,333.33},{},0,0,0,false}
 };
 
-static const int len_g00074[] = {4,1};
+static const int len_g00074[] = {3,1};
 
 static const Segment seg_g00075[] = {
 {Segment::Type::Line,{166.67,333.33},{166.67,666.67},{},0,0,0,false},
@@ -2427,10 +2418,11 @@ static const Segment seg_g03081[] = {
 {Segment::Type::Line,{468.05,358.15},{530.34,346.33},{},0,0,0,false},
 {Segment::Type::Line,{530.34,346.33},{656.15,354.13},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{609.215,572.375},223.234,-1.359,1.109,true},
-{Segment::Type::Arc,{},{},{544.98,491.348},325.096,1.043,1.454,true}
+{Segment::Type::Line,{708.63,772.25},{651.03,798.66},{},0,0,0,false},
+{Segment::Type::Line,{651.03,798.66},{582.94,814.22},{},0,0,0,false}
 };
 
-static const int len_g03081[] = {2,14};
+static const int len_g03081[] = {2,15};
 
 static const Segment seg_g03082[] = {
 {Segment::Type::Line,{451.1,135.32},{465.64,172.77},{},0,0,0,false},
@@ -2487,10 +2479,8 @@ static const int len_g03084[] = {7,4,2};
 static const Segment seg_g03085[] = {
 {Segment::Type::Line,{254.5,374.22},{266.27,416.12},{},0,0,0,false},
 {Segment::Type::Line,{266.27,416.12},{243.51,566.69},{},0,0,0,false},
-{Segment::Type::Line,{243.51,566.69},{257.66,726.84},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{258.627,735.8},9.012,-1.678,-0.884,false},
-{Segment::Type::Line,{264.34,728.83},{273.76,665.87},{},0,0,0,false},
-{Segment::Type::Line,{273.76,665.87},{312.06,589.18},{},0,0,0,false},
+{Segment::Type::Line,{243.51,566.69},{267.99,689.99},{},0,0,0,false},
+{Segment::Type::Line,{267.99,689.99},{312.06,589.18},{},0,0,0,false},
 {Segment::Type::Line,{312.06,589.18},{386.11,499.68},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{614.834,748.927},338.288,-2.313,-1.805,true},
 {Segment::Type::Line,{536.18,419.91},{599.36,412.75},{},0,0,0,false},
@@ -2502,7 +2492,7 @@ static const Segment seg_g03085[] = {
 {Segment::Type::Arc,{},{},{245.598,648.229},317.151,0.313,0.76,true}
 };
 
-static const int len_g03085[] = {12,3};
+static const int len_g03085[] = {10,3};
 
 static const Segment seg_g03086[] = {
 {Segment::Type::Line,{193.12,232.84},{208.4,280.14},{},0,0,0,false},
@@ -2589,8 +2579,7 @@ static const int len_g0308a[] = {6,4};
 static const Segment seg_g0308b[] = {
 {Segment::Type::Line,{314.77,186.97},{590.77,165.09},{},0,0,0,false},
 {Segment::Type::Line,{590.77,165.09},{492.99,305.58},{},0,0,0,false},
-{Segment::Type::Line,{492.99,305.58},{252.49,579.68},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{257.861,587.733},9.68,-2.159,-1.021,false},
+{Segment::Type::Line,{492.99,305.58},{262.92,579.48},{},0,0,0,false},
 {Segment::Type::Line,{262.92,579.48},{407.51,501.66},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{529.723,834.574},354.638,-1.923,-1.43,true},
 {Segment::Type::Arc,{},{},{560.178,645.929},163.626,-1.452,0.097,true},
@@ -2605,7 +2594,7 @@ static const Segment seg_g0308b[] = {
 {Segment::Type::Arc,{},{},{437.629,883.249},172.825,-1.274,-0.683,true}
 };
 
-static const int len_g0308b[] = {16};
+static const int len_g0308b[] = {15};
 
 static const Segment seg_g0308c[] = {
 {Segment::Type::Line,{316.33,119.27},{339.57,165.93},{},0,0,0,false},
@@ -2628,9 +2617,8 @@ static const Segment seg_g0308d[] = {
 {Segment::Type::Arc,{},{},{398.062,99.588},126.55,1.796,1.112,false},
 {Segment::Type::Line,{454.15,213.03},{559.24,179.39},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{575.438,190.353},19.559,-2.547,0.799,true},
-{Segment::Type::Line,{589.08,204.37},{273.89,609.92},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{268.095,614.336},7.286,-0.651,0.567,false},
-{Segment::Type::Line,{274.24,618.25},{438.7,520.92},{},0,0,0,false},
+{Segment::Type::Line,{589.08,204.37},{285.38,611.11},{},0,0,0,false},
+{Segment::Type::Line,{285.38,611.11},{438.7,520.92},{},0,0,0,false},
 {Segment::Type::Line,{438.7,520.92},{533.4,493.35},{},0,0,0,false},
 {Segment::Type::Line,{533.4,493.35},{625.3,487.68},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{633,634.005},146.527,-1.623,0.048,true},
@@ -2638,7 +2626,7 @@ static const Segment seg_g0308d[] = {
 {Segment::Type::Line,{593.11,845.47},{484.68,871.47},{},0,0,0,false}
 };
 
-static const int len_g0308d[] = {12};
+static const int len_g0308d[] = {11};
 
 static const Segment seg_g0308e[] = {
 {Segment::Type::Line,{390.55,297.06},{405.27,333.82},{},0,0,0,false},
@@ -2743,8 +2731,8 @@ static const Segment seg_g03092[] = {
 {Segment::Type::Line,{305.06,267.58},{620.92,215.78},{},0,0,0,false},
 {Segment::Type::Line,{458.07,131.93},{461.56,183.49},{},0,0,0,false},
 {Segment::Type::Line,{461.56,183.49},{364.83,370.95},{},0,0,0,false},
-{Segment::Type::Line,{364.83,370.95},{257.06,523.53},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{244.766,528.667},13.324,-0.396,0.838,false},
+{Segment::Type::Line,{364.83,370.95},{248.64,534.95},{},0,0,0,false},
+{Segment::Type::Arc,{},{},{248.092,541.031},6.106,-1.481,-0.415,false},
 {Segment::Type::Line,{253.68,538.57},{323.94,483.94},{},0,0,0,false},
 {Segment::Type::Line,{323.94,483.94},{416.84,437.94},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{434.341,513.361},77.425,-1.799,-0.525,true},
@@ -6605,10 +6593,13 @@ static const Segment seg_g0733f[] = {
 {Segment::Type::Line,{346.97,135.32},{304.05,204.94},{},0,0,0,false},
 {Segment::Type::Line,{304.05,204.94},{242.74,261.63},{},0,0,0,false},
 {Segment::Type::Line,{242.74,261.63},{127.25,339.54},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{-63.784,420.08},348.158,-0.852,-0.387,true},
+{Segment::Type::Line,{165.6,158.17},{218.65,216.5},{},0,0,0,false},
+{Segment::Type::Line,{218.65,216.5},{258.56,288.52},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-484.828,574.403},796.464,-0.367,0.25,true},
-{Segment::Type::Arc,{},{},{137.075,740.206},153.035,0.204,0.801,true},
-{Segment::Type::Arc,{},{},{224.044,818.703},36.959,1.012,2.789,true},
+{Segment::Type::Line,{286.93,771.24},{267.23,820.7},{},0,0,0,false},
+{Segment::Type::Line,{267.23,820.7},{243.64,850.04},{},0,0,0,false},
+{Segment::Type::Line,{243.64,850.04},{217.29,855.04},{},0,0,0,false},
+{Segment::Type::Line,{217.29,855.04},{189.36,831.47},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{163.353,390.333},105.841,-0.047,0.801,true},
 {Segment::Type::Line,{237,466.35},{193.4,525.81},{},0,0,0,false},
 {Segment::Type::Line,{193.4,525.81},{112.11,610.37},{},0,0,0,false},
@@ -6636,7 +6627,7 @@ static const Segment seg_g0733f[] = {
 {Segment::Type::Arc,{},{},{1061.914,461.14},436.868,2.463,2.073,false}
 };
 
-static const int len_g0733f[] = {3,4,3,1,2,3,1,3,1,3,3,2,3};
+static const int len_g0733f[] = {3,7,3,1,2,3,1,3,1,3,3,2,3};
 
 static const Segment seg_g09060[] = {
 {Segment::Type::Line,{420.37,214.22},{458.18,217.44},{},0,0,0,false},
@@ -9997,10 +9988,12 @@ static const int len_g078ba[] = {1,3,2,3,1,1,3,3,2,1,1,2,1,1,1};
 static const Segment seg_g07372[] = {
 {Segment::Type::Arc,{},{},{243.072,167.045},85.651,-0.049,1.025,true},
 {Segment::Type::Line,{287.52,240.26},{137.61,385.69},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{-50.265,462.706},363.632,-0.856,-0.44,true},
+{Segment::Type::Line,{188.07,188.07},{238.95,242.29},{},0,0,0,false},
+{Segment::Type::Line,{238.95,242.29},{278.76,307.88},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-394.102,610.665},737.85,-0.423,0.179,true},
 {Segment::Type::Line,{331.99,741.86},{299.19,816.82},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{278.437,795.634},29.657,0.796,2.65,true},
+{Segment::Type::Line,{299.19,816.82},{277.08,825.26},{},0,0,0,false},
+{Segment::Type::Line,{277.08,825.26},{252.29,809.63},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{184.325,414.75},108.521,-0.124,0.751,true},
 {Segment::Type::Line,{263.62,488.84},{219.74,561.78},{},0,0,0,false},
 {Segment::Type::Line,{219.74,561.78},{134.13,665.14},{},0,0,0,false},
@@ -10027,7 +10020,7 @@ static const Segment seg_g07372[] = {
 {Segment::Type::Arc,{},{},{1231.777,-339.916},1262.849,2.124,1.882,false}
 };
 
-static const int len_g07372[] = {2,4,3,1,1,2,2,2,1,1,1,1,1,1,5,2};
+static const int len_g07372[] = {2,6,3,1,1,2,2,2,1,1,1,1,1,1,5,2};
 
 static const Segment seg_g05687[] = {
 {Segment::Type::Line,{105.5,322.75},{116.59,344.64},{},0,0,0,false},
@@ -14802,10 +14795,12 @@ static const Segment seg_g072c2[] = {
 {Segment::Type::Arc,{},{},{204.839,130.786},155.5,0.238,0.991,true},
 {Segment::Type::Line,{289.99,260.9},{219.89,324.02},{},0,0,0,false},
 {Segment::Type::Line,{219.89,324.02},{116.97,394.5},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{-59.552,449.81},354.426,-0.85,-0.438,true},
+{Segment::Type::Line,{174.31,183.49},{222.93,235.75},{},0,0,0,false},
+{Segment::Type::Line,{222.93,235.75},{261.46,299.58},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-442.052,614.666},770.849,-0.421,0.148,true},
 {Segment::Type::Line,{320.42,728},{291.49,803.44},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{271.37,786.101},26.56,0.711,2.67,true},
+{Segment::Type::Line,{291.49,803.44},{271.1,812.66},{},0,0,0,false},
+{Segment::Type::Line,{271.1,812.66},{247.71,798.17},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{186.651,415.644},96.675,-0.1,0.866,true},
 {Segment::Type::Line,{249.28,489.29},{199.39,558.63},{},0,0,0,false},
 {Segment::Type::Line,{199.39,558.63},{105.5,654.04},{},0,0,0,false},
@@ -14819,7 +14814,7 @@ static const Segment seg_g072c2[] = {
 {Segment::Type::Arc,{},{},{776.493,1202.882},437.591,-1.734,-1.341,true}
 };
 
-static const int len_g072c2[] = {3,4,3,2,2,1,3};
+static const int len_g072c2[] = {3,6,3,2,2,1,3};
 
 static const Segment seg_g04eac[] = {
 {Segment::Type::Arc,{},{},{335.48,184.731},160.523,-0.555,0.285,true},
@@ -14994,7 +14989,8 @@ static const Segment seg_g072ed[] = {
 {Segment::Type::Line,{247.54,291.91},{130.73,369.72},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-264.155,600.398},603.375,-0.763,0.265,true},
 {Segment::Type::Line,{318.13,758.53},{278.29,832.47},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{256.602,805.776},34.394,0.888,2.604,true},
+{Segment::Type::Line,{278.29,832.47},{253.5,840.03},{},0,0,0,false},
+{Segment::Type::Line,{253.5,840.03},{227.06,823.39},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{174.65,407.643},106.085,-0.059,0.814,true},
 {Segment::Type::Line,{247.51,484.75},{200.81,548.42},{},0,0,0,false},
 {Segment::Type::Line,{200.81,548.42},{114.59,638.07},{},0,0,0,false},
@@ -15013,7 +15009,7 @@ static const Segment seg_g072ed[] = {
 {Segment::Type::Arc,{},{},{1133.265,423.772},510.43,2.622,2.141,false}
 };
 
-static const int len_g072ed[] = {3,3,3,2,1,2,2,4,2};
+static const int len_g072ed[] = {3,4,3,2,1,2,2,4,2};
 
 static const Segment seg_g06050[] = {
 {Segment::Type::Line,{128.53,204.59},{164.13,208.24},{},0,0,0,false},
@@ -22079,10 +22075,12 @@ static const Segment seg_g07344[] = {
 {Segment::Type::Arc,{},{},{201.741,173.737},90.178,-0.045,0.966,true},
 {Segment::Type::Line,{253.03,247.91},{194.95,314.92},{},0,0,0,false},
 {Segment::Type::Line,{194.95,314.92},{87.16,413.21},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{-127.13,480.588},386.358,-0.832,-0.418,true},
+{Segment::Type::Line,{133.03,194.95},{185.75,253.92},{},0,0,0,false},
+{Segment::Type::Line,{185.75,253.92},{225.9,323.61},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-435.452,604.558},718.553,-0.402,0.231,true},
 {Segment::Type::Line,{264.02,769.05},{225.82,843.17},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{205.351,818.536},32.028,0.877,2.672,true},
+{Segment::Type::Line,{225.82,843.17},{202.11,850.4},{},0,0,0,false},
+{Segment::Type::Line,{202.11,850.4},{176.79,833.03},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{139.462,455.99},89.204,-0.124,0.756,true},
 {Segment::Type::Line,{204.38,517.17},{96.33,660.92},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{306.354,323.291},181.174,-0.965,-0.43,true},
@@ -22105,7 +22103,7 @@ static const Segment seg_g07344[] = {
 {Segment::Type::Line,{759.91,197.25},{834.86,291.28},{},0,0,0,false}
 };
 
-static const int len_g07344[] = {3,4,2,1,2,1,1,1,3,1,1,4,2,1};
+static const int len_g07344[] = {3,6,2,1,2,1,1,1,3,1,1,4,2,1};
 
 static const Segment seg_g09aa8[] = {
 {Segment::Type::Arc,{},{},{281.514,147.931},52.482,-0.776,0.272,true},
@@ -27317,7 +27315,8 @@ static const Segment seg_g072e9[] = {
 {Segment::Type::Line,{288.51,258.28},{128.44,394.86},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-241.617,607.984},586.551,-0.749,0.256,true},
 {Segment::Type::Line,{325.81,756.54},{289.2,827.69},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{268.745,804.201},31.147,0.854,2.62,true},
+{Segment::Type::Line,{289.2,827.69},{266.28,835.25},{},0,0,0,false},
+{Segment::Type::Line,{266.28,835.25},{241.74,819.72},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{177.647,426.838},116.574,-0.002,0.824,true},
 {Segment::Type::Line,{256.81,512.41},{206.25,579.81},{},0,0,0,false},
 {Segment::Type::Line,{206.25,579.81},{110.09,673.21},{},0,0,0,false},
@@ -27334,7 +27333,7 @@ static const Segment seg_g072e9[] = {
 {Segment::Type::Arc,{},{},{330.198,756.009},259.232,-0.756,-0.287,true}
 };
 
-static const int len_g072e9[] = {2,3,3,1,1,3,2,3,1};
+static const int len_g072e9[] = {2,4,3,1,1,3,2,3,1};
 
 static const Segment seg_g09996[] = {
 {Segment::Type::Arc,{},{},{183.888,349.553},234.911,-0.935,-0.407,true},
@@ -36390,10 +36389,13 @@ static const Segment seg_g072d9[] = {
 {Segment::Type::Arc,{},{},{264.72,150.027},92.483,0.164,1.149,true},
 {Segment::Type::Line,{302.57,234.41},{239.42,288.54},{},0,0,0,false},
 {Segment::Type::Line,{239.42,288.54},{119.27,365.05},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{-13.482,413.384},311.439,-0.96,-0.458,true},
+{Segment::Type::Line,{165.14,158.26},{221.97,209.53},{},0,0,0,false},
+{Segment::Type::Line,{221.97,209.53},{265.83,275.62},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-383.257,574.859},714.743,-0.432,0.238,true},
-{Segment::Type::Arc,{},{},{165.278,714.211},148.956,0.195,0.817,true},
-{Segment::Type::Arc,{},{},{244.133,786.348},43.162,1.006,2.634,true},
+{Segment::Type::Line,{311.42,743.03},{291.89,792.68},{},0,0,0,false},
+{Segment::Type::Line,{291.89,792.68},{267.23,822.81},{},0,0,0,false},
+{Segment::Type::Line,{267.23,822.81},{238.42,829.13},{},0,0,0,false},
+{Segment::Type::Line,{238.42,829.13},{206.42,807.34},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{145.008,388.161},147.605,0.09,0.779,true},
 {Segment::Type::Line,{250.06,491.85},{200.19,561.91},{},0,0,0,false},
 {Segment::Type::Line,{200.19,561.91},{107.8,658.62},{},0,0,0,false},
@@ -36408,7 +36410,7 @@ static const Segment seg_g072d9[] = {
 {Segment::Type::Arc,{},{},{772.925,3147.394},2339.139,-1.71,-1.513,true}
 };
 
-static const int len_g072d9[] = {3,4,3,2,3,1,1,2};
+static const int len_g072d9[] = {3,7,3,2,3,1,1,2};
 
 static const Segment seg_g0963b[] = {
 {Segment::Type::Arc,{},{},{208.304,95.325},110.688,1.971,1.105,false},
@@ -45907,10 +45909,12 @@ static const Segment seg_g072ec[] = {
 {Segment::Type::Line,{353.76,192.66},{308.49,278.11},{},0,0,0,false},
 {Segment::Type::Line,{308.49,278.11},{259.38,341.59},{},0,0,0,false},
 {Segment::Type::Line,{259.38,341.59},{128.44,463.67},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{-20.553,505.859},334.268,-0.861,-0.428,true},
+{Segment::Type::Line,{197.25,252.29},{246.45,304.75},{},0,0,0,false},
+{Segment::Type::Line,{246.45,304.75},{283.55,367.09},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-277.806,609.66},611.523,-0.408,0.264,true},
 {Segment::Type::Line,{312.61,768.94},{274.55,836.47},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{254.531,811.385},32.094,0.897,2.598,true},
+{Segment::Type::Line,{274.55,836.47},{251.44,843.33},{},0,0,0,false},
+{Segment::Type::Line,{251.44,843.33},{227.06,827.98},{},0,0,0,false},
 {Segment::Type::Line,{326.33,449.54},{273.13,552.13},{},0,0,0,false},
 {Segment::Type::Line,{273.13,552.13},{217.94,618.42},{},0,0,0,false},
 {Segment::Type::Line,{217.94,618.42},{137.61,693.12},{},0,0,0,false},
@@ -45927,7 +45931,7 @@ static const Segment seg_g072ec[] = {
 {Segment::Type::Arc,{},{},{540.977,960.538},362.419,-0.917,-0.394,true}
 };
 
-static const int len_g072ec[] = {3,4,3,2,3,1,2,2,1};
+static const int len_g072ec[] = {3,6,3,2,3,1,2,2,1};
 
 static const Segment seg_g08aad[] = {
 {Segment::Type::Arc,{},{},{70.886,290.452},205.276,-0.857,-0.349,true},
@@ -48564,10 +48568,12 @@ static const Segment seg_g072af[] = {
 {Segment::Type::Arc,{},{},{288.913,161.775},71.737,-0.017,0.978,true},
 {Segment::Type::Line,{328.98,221.28},{253.76,296.94},{},0,0,0,false},
 {Segment::Type::Line,{253.76,296.94},{144.5,378.81},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{66.731,420.052},259.763,-1.085,-0.509,true},
+{Segment::Type::Line,{188.07,190.37},{248.06,234.05},{},0,0,0,false},
+{Segment::Type::Line,{248.06,234.05},{293.56,293.46},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-254.731,565.278},611.97,-0.46,0.382,true},
 {Segment::Type::Line,{313.22,793.18},{288.63,825.61},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{263.039,797.918},37.706,0.825,2.554,true},
+{Segment::Type::Line,{288.63,825.61},{261.02,835.57},{},0,0,0,false},
+{Segment::Type::Line,{261.02,835.57},{231.65,818.81},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{209.216,425.715},105.692,0.03,0.912,true},
 {Segment::Type::Line,{273.89,509.31},{220.32,575.7},{},0,0,0,false},
 {Segment::Type::Line,{220.32,575.7},{128.44,660.92},{},0,0,0,false},
@@ -48585,7 +48591,7 @@ static const Segment seg_g072af[] = {
 {Segment::Type::Arc,{},{},{816.46,770.675},68.833,0.784,-0.169,false}
 };
 
-static const int len_g072af[] = {3,4,3,6,6};
+static const int len_g072af[] = {3,6,3,6,6};
 
 static const Segment seg_g05e06[] = {
 {Segment::Type::Line,{122.75,318.44},{133.43,343.44},{},0,0,0,false},
@@ -50480,10 +50486,12 @@ static const int len_g063cf[] = {1,4,2,3,2,1,2,4,1,1,1};
 static const Segment seg_g0732b[] = {
 {Segment::Type::Line,{330.73,178.9},{270.85,267.57},{},0,0,0,false},
 {Segment::Type::Line,{270.85,267.57},{103.21,415.5},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{-86.66,482.716},402.252,-0.865,-0.448,true},
+{Segment::Type::Line,{174.31,176.61},{231.89,237.09},{},0,0,0,false},
+{Segment::Type::Line,{231.89,237.09},{275.84,308.36},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-361.596,600.578},701.224,-0.43,0.235,true},
 {Segment::Type::Line,{320.43,763.54},{280.58,840.46},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{258.225,815.385},33.593,0.843,2.605,true},
+{Segment::Type::Line,{280.58,840.46},{255.79,848.89},{},0,0,0,false},
+{Segment::Type::Line,{255.79,848.89},{229.36,832.57},{},0,0,0,false},
 {Segment::Type::Line,{287.43,428.9},{252.94,505.42},{},0,0,0,false},
 {Segment::Type::Line,{252.94,505.42},{202.39,574.82},{},0,0,0,false},
 {Segment::Type::Line,{202.39,574.82},{105.5,670.09},{},0,0,0,false},
@@ -50503,7 +50511,7 @@ static const Segment seg_g0732b[] = {
 {Segment::Type::Line,{488.81,830.18},{796.79,817.34},{},0,0,0,false}
 };
 
-static const int len_g0732b[] = {2,4,3,2,2,1,2,4,1,1,1};
+static const int len_g0732b[] = {2,6,3,2,2,1,2,4,1,1,1};
 
 static const Segment seg_g054c1[] = {
 {Segment::Type::Line,{286.7,170.92},{304.79,193.19},{},0,0,0,false},
@@ -51352,12 +51360,13 @@ static const Segment seg_g090e8[] = {
 {Segment::Type::Arc,{},{},{636.793,582.986},233.337,-1.113,-0.493,true},
 {Segment::Type::Arc,{},{},{639.824,591.398},234.812,-0.53,0.279,true},
 {Segment::Type::Line,{865.58,655.98},{833.33,685.41},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{830.619,621.258},64.209,1.529,2.416,true},
+{Segment::Type::Line,{833.33,685.41},{810.04,682.08},{},0,0,0,false},
+{Segment::Type::Line,{810.04,682.08},{782.57,663.85},{},0,0,0,false},
 {Segment::Type::Line,{618.07,184.77},{627.83,211.49},{},0,0,0,false},
 {Segment::Type::Line,{627.83,211.49},{628.07,889.54},{},0,0,0,false}
 };
 
-static const int len_g090e8[] = {1,2,1,2,2,1,3,1,3,4,2};
+static const int len_g090e8[] = {1,2,1,2,2,1,3,1,3,5,2};
 
 static const Segment seg_g0821e[] = {
 {Segment::Type::Line,{350.37,100.46},{310.75,172.11},{},0,0,0,false},
@@ -56425,10 +56434,12 @@ static const int len_g08017[] = {2,1,2,2,3,1,3,2,3,5};
 static const Segment seg_g0731b[] = {
 {Segment::Type::Line,{346.79,165.14},{282.63,248.57},{},0,0,0,false},
 {Segment::Type::Line,{282.63,248.57},{126.15,369.72},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{-51.827,460.225},365.434,-0.951,-0.489,true},
+{Segment::Type::Line,{160.55,162.84},{223.43,219.86},{},0,0,0,false},
+{Segment::Type::Line,{223.43,219.86},{270.84,288.68},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-301.505,569.853},637.681,-0.457,0.275,true},
 {Segment::Type::Line,{312.27,742.82},{268.57,821.33},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{245.072,795.52},34.904,0.832,2.576,true},
+{Segment::Type::Line,{268.57,821.33},{242.51,830.33},{},0,0,0,false},
+{Segment::Type::Line,{242.51,830.33},{215.6,814.22},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{179.84,428.808},105.608,-0.064,0.788,true},
 {Segment::Type::Line,{254.31,503.69},{210.1,567.36},{},0,0,0,false},
 {Segment::Type::Line,{210.1,567.36},{128.44,656.33},{},0,0,0,false},
@@ -56452,7 +56463,7 @@ static const Segment seg_g0731b[] = {
 {Segment::Type::Arc,{},{},{764.315,3416.092},2608.474,-1.7,-1.518,true}
 };
 
-static const int len_g0731b[] = {2,4,3,4,3,2,2,3,1,1,2};
+static const int len_g0731b[] = {2,6,3,4,3,2,2,3,1,1,2};
 
 static const Segment seg_g07db2[] = {
 {Segment::Type::Line,{264.95,130},{266.79,141.67},{},0,0,0,false},
@@ -57362,7 +57373,8 @@ static const Segment seg_g07336[] = {
 {Segment::Type::Line,{291.38,237.4},{123.85,358.17},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-264.88,575.153},608.8,-0.759,0.265,true},
 {Segment::Type::Line,{322.72,734.41},{282.87,809.2},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{260.987,782.986},34.147,0.875,2.604,true},
+{Segment::Type::Line,{282.87,809.2},{258.09,817.01},{},0,0,0,false},
+{Segment::Type::Line,{258.09,817.01},{231.65,800.46},{},0,0,0,false},
 {Segment::Type::Line,{285.14,419.72},{249.66,492.7},{},0,0,0,false},
 {Segment::Type::Line,{249.66,492.7},{202.32,551.91},{},0,0,0,false},
 {Segment::Type::Line,{202.32,551.91},{112.39,633.39},{},0,0,0,false},
@@ -57385,7 +57397,7 @@ static const Segment seg_g07336[] = {
 {Segment::Type::Line,{465.87,840.28},{817.89,815.96},{},0,0,0,false}
 };
 
-static const int len_g07336[] = {2,3,3,1,1,2,2,3,2,4,1,1};
+static const int len_g07336[] = {2,4,3,1,1,2,2,3,2,4,1,1};
 
 static const Segment seg_g088d5[] = {
 {Segment::Type::Line,{186.51,123.85},{275.96,206.42},{},0,0,0,false},
@@ -59831,10 +59843,12 @@ static const Segment seg_g0731f[] = {
 {Segment::Type::Arc,{},{},{208.297,133.71},122.827,0.069,0.881,true},
 {Segment::Type::Line,{286.42,228.49},{223.07,304.75},{},0,0,0,false},
 {Segment::Type::Line,{223.07,304.75},{112.39,401.74},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{-30.913,454.001},326.838,-0.988,-0.489,true},
+{Segment::Type::Line,{149.08,181.19},{210.95,234.17},{},0,0,0,false},
+{Segment::Type::Line,{210.95,234.17},{257.61,300.45},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{-311.119,578.002},632.841,-0.454,0.373,true},
 {Segment::Type::Line,{278.26,808.48},{254.66,840.46},{},0,0,0,false},
-{Segment::Type::Arc,{},{},{230.471,816.663},33.932,0.777,2.576,true},
+{Segment::Type::Line,{254.66,840.46},{228.71,850.55},{},0,0,0,false},
+{Segment::Type::Line,{228.71,850.55},{201.83,834.86},{},0,0,0,false},
 {Segment::Type::Line,{273.76,433.49},{231.16,519.32},{},0,0,0,false},
 {Segment::Type::Line,{231.16,519.32},{110.09,663.21},{},0,0,0,false},
 {Segment::Type::Arc,{},{},{101.242,421.172},410.017,-0.702,-0.337,true},
@@ -59858,7 +59872,7 @@ static const Segment seg_g0731f[] = {
 {Segment::Type::Line,{592.88,399.24},{592.84,851.01},{},0,0,0,false}
 };
 
-static const int len_g0731f[] = {3,4,2,1,1,2,3,8,1,1,2};
+static const int len_g0731f[] = {3,6,2,1,1,2,3,8,1,1,2};
 
 static const Segment seg_g09675[] = {
 {Segment::Type::Arc,{},{},{188.868,86.053},100.221,1.913,1.154,false},
@@ -61977,8 +61991,8 @@ static const GlyphData kGlyphs[] = {
   {0x30u, len_g00030, 1, seg_g00030, 12, 791.67},
   {0x31u, len_g00031, 1, seg_g00031, 3, 541.67},
   {0x32u, len_g00032, 1, seg_g00032, 6, 791.67},
-  {0x33u, len_g00033, 1, seg_g00033, 10, 791.67},
-  {0x34u, len_g00034, 2, seg_g00034, 4, 833.33},
+  {0x33u, len_g00033, 1, seg_g00033, 9, 791.67},
+  {0x34u, len_g00034, 2, seg_g00034, 3, 833.33},
   {0x35u, len_g00035, 1, seg_g00035, 9, 791.67},
   {0x36u, len_g00036, 1, seg_g00036, 20, 791.67},
   {0x37u, len_g00037, 2, seg_g00037, 2, 791.67},
@@ -61986,13 +62000,13 @@ static const GlyphData kGlyphs[] = {
   {0x39u, len_g00039, 1, seg_g00039, 19, 750},
   {0x3au, len_g0003a, 2, seg_g0003a, 9, 291.67},
   {0x3bu, len_g0003b, 2, seg_g0003b, 12, 291.67},
-  {0x3cu, len_g0003c, 1, seg_g0003c, 3, 916.67},
+  {0x3cu, len_g0003c, 1, seg_g0003c, 2, 916.67},
   {0x3du, len_g0003d, 2, seg_g0003d, 2, 1000},
-  {0x3eu, len_g0003e, 1, seg_g0003e, 3, 916.67},
+  {0x3eu, len_g0003e, 1, seg_g0003e, 2, 916.67},
   {0x3fu, len_g0003f, 2, seg_g0003f, 10, 708.33},
   {0x40u, len_g00040, 4, seg_g00040, 26, 1083.33},
   {0x41u, len_g00041, 3, seg_g00041, 3, 791.67},
-  {0x42u, len_g00042, 3, seg_g00042, 13, 833.33},
+  {0x42u, len_g00042, 3, seg_g00042, 12, 833.33},
   {0x43u, len_g00043, 1, seg_g00043, 8, 833.33},
   {0x44u, len_g00044, 2, seg_g00044, 9, 833.33},
   {0x45u, len_g00045, 4, seg_g00045, 4, 791.67},
@@ -62028,11 +62042,11 @@ static const GlyphData kGlyphs[] = {
   {0x63u, len_g00063, 1, seg_g00063, 9, 708.33},
   {0x64u, len_g00064, 2, seg_g00064, 10, 708.33},
   {0x65u, len_g00065, 1, seg_g00065, 10, 708.33},
-  {0x66u, len_g00066, 2, seg_g00066, 5, 500},
-  {0x67u, len_g00067, 2, seg_g00067, 14, 708.33},
+  {0x66u, len_g00066, 2, seg_g00066, 4, 500},
+  {0x67u, len_g00067, 2, seg_g00067, 13, 708.33},
   {0x68u, len_g00068, 2, seg_g00068, 5, 708.33},
   {0x69u, len_g00069, 2, seg_g00069, 5, 291.67},
-  {0x6au, len_g0006a, 2, seg_g0006a, 8, 375},
+  {0x6au, len_g0006a, 2, seg_g0006a, 7, 375},
   {0x6bu, len_g0006b, 3, seg_g0006b, 3, 708.33},
   {0x6cu, len_g0006c, 1, seg_g0006c, 1, 250},
   {0x6du, len_g0006d, 3, seg_g0006d, 9, 1166.67},
@@ -62042,7 +62056,7 @@ static const GlyphData kGlyphs[] = {
   {0x71u, len_g00071, 2, seg_g00071, 10, 708.33},
   {0x72u, len_g00072, 2, seg_g00072, 3, 583.33},
   {0x73u, len_g00073, 1, seg_g00073, 15, 666.67},
-  {0x74u, len_g00074, 2, seg_g00074, 5, 500},
+  {0x74u, len_g00074, 2, seg_g00074, 4, 500},
   {0x75u, len_g00075, 2, seg_g00075, 8, 708.33},
   {0x76u, len_g00076, 2, seg_g00076, 2, 666.67},
   {0x77u, len_g00077, 4, seg_g00077, 4, 875},
@@ -62118,19 +62132,19 @@ static const GlyphData kGlyphs[] = {
   {0x307eu, len_g0307e, 3, seg_g0307e, 13, 1000},
   {0x307fu, len_g0307f, 2, seg_g0307f, 13, 1000},
   {0x3080u, len_g03080, 3, seg_g03080, 21, 1000},
-  {0x3081u, len_g03081, 2, seg_g03081, 16, 1000},
+  {0x3081u, len_g03081, 2, seg_g03081, 17, 1000},
   {0x3082u, len_g03082, 3, seg_g03082, 12, 1000},
   {0x3083u, len_g03083, 3, seg_g03083, 12, 1000},
   {0x3084u, len_g03084, 3, seg_g03084, 13, 1000},
-  {0x3085u, len_g03085, 2, seg_g03085, 15, 1000},
+  {0x3085u, len_g03085, 2, seg_g03085, 13, 1000},
   {0x3086u, len_g03086, 2, seg_g03086, 15, 1000},
   {0x3087u, len_g03087, 2, seg_g03087, 10, 1000},
   {0x3088u, len_g03088, 2, seg_g03088, 11, 1000},
   {0x3089u, len_g03089, 2, seg_g03089, 11, 1000},
   {0x308au, len_g0308a, 2, seg_g0308a, 10, 1000},
-  {0x308bu, len_g0308b, 1, seg_g0308b, 16, 1000},
+  {0x308bu, len_g0308b, 1, seg_g0308b, 15, 1000},
   {0x308cu, len_g0308c, 2, seg_g0308c, 11, 1000},
-  {0x308du, len_g0308d, 1, seg_g0308d, 12, 1000},
+  {0x308du, len_g0308d, 1, seg_g0308d, 11, 1000},
   {0x308eu, len_g0308e, 2, seg_g0308e, 12, 1000},
   {0x308fu, len_g0308f, 2, seg_g0308f, 13, 1000},
   {0x3090u, len_g03090, 1, seg_g03090, 25, 1000},
@@ -62327,7 +62341,7 @@ static const GlyphData kGlyphs[] = {
   {0x63f4u, len_g063f4, 12, seg_g063f4, 28, 1000},
   {0x5712u, len_g05712, 13, seg_g05712, 22, 1000},
   {0x7159u, len_g07159, 13, seg_g07159, 25, 1000},
-  {0x733fu, len_g0733f, 13, seg_g0733f, 32, 1000},
+  {0x733fu, len_g0733f, 13, seg_g0733f, 35, 1000},
   {0x9060u, len_g09060, 13, seg_g09060, 29, 1000},
   {0x925bu, len_g0925b, 13, seg_g0925b, 23, 1000},
   {0x5869u, len_g05869, 13, seg_g05869, 24, 1000},
@@ -62453,7 +62467,7 @@ static const GlyphData kGlyphs[] = {
   {0x9694u, len_g09694, 13, seg_g09694, 30, 1000},
   {0x95a3u, len_g095a3, 14, seg_g095a3, 28, 1000},
   {0x78bau, len_g078ba, 15, seg_g078ba, 26, 1000},
-  {0x7372u, len_g07372, 16, seg_g07372, 30, 1000},
+  {0x7372u, len_g07372, 16, seg_g07372, 32, 1000},
   {0x5687u, len_g05687, 17, seg_g05687, 32, 1000},
   {0x7a6bu, len_g07a6b, 18, seg_g07a6b, 33, 1000},
   {0x5b66u, len_g05b66, 8, seg_g05b66, 18, 1000},
@@ -62627,7 +62641,7 @@ static const GlyphData kGlyphs[] = {
   {0x51f6u, len_g051f6, 4, seg_g051f6, 10, 1000},
   {0x5171u, len_g05171, 6, seg_g05171, 13, 1000},
   {0x53ebu, len_g053eb, 6, seg_g053eb, 13, 1000},
-  {0x72c2u, len_g072c2, 7, seg_g072c2, 18, 1000},
+  {0x72c2u, len_g072c2, 7, seg_g072c2, 20, 1000},
   {0x4eacu, len_g04eac, 8, seg_g04eac, 17, 1000},
   {0x4eabu, len_g04eab, 8, seg_g04eab, 19, 1000},
   {0x4f9bu, len_g04f9b, 8, seg_g04f9b, 16, 1000},
@@ -62635,7 +62649,7 @@ static const GlyphData kGlyphs[] = {
   {0x6cc1u, len_g06cc1, 8, seg_g06cc1, 17, 1000},
   {0x5ce1u, len_g05ce1, 9, seg_g05ce1, 18, 1000},
   {0x631fu, len_g0631f, 9, seg_g0631f, 18, 1000},
-  {0x72edu, len_g072ed, 9, seg_g072ed, 22, 1000},
+  {0x72edu, len_g072ed, 9, seg_g072ed, 23, 1000},
   {0x6050u, len_g06050, 10, seg_g06050, 26, 1000},
   {0x606du, len_g0606d, 10, seg_g0606d, 21, 1000},
   {0x80f8u, len_g080f8, 10, seg_g080f8, 28, 1000},
@@ -62895,7 +62909,7 @@ static const GlyphData kGlyphs[] = {
   {0x9ed2u, len_g09ed2, 11, seg_g09ed2, 15, 1000},
   {0x7a40u, len_g07a40, 14, seg_g07a40, 35, 1000},
   {0x9177u, len_g09177, 14, seg_g09177, 27, 1000},
-  {0x7344u, len_g07344, 14, seg_g07344, 27, 1000},
+  {0x7344u, len_g07344, 14, seg_g07344, 29, 1000},
   {0x9aa8u, len_g09aa8, 10, seg_g09aa8, 20, 1000},
   {0x99d2u, len_g099d2, 15, seg_g099d2, 30, 1000},
   {0x8fbcu, len_g08fbc, 5, seg_g08fbc, 18, 1000},
@@ -63098,7 +63112,7 @@ static const GlyphData kGlyphs[] = {
   {0x5b88u, len_g05b88, 6, seg_g05b88, 13, 1000},
   {0x6731u, len_g06731, 6, seg_g06731, 16, 1000},
   {0x53d6u, len_g053d6, 8, seg_g053d6, 21, 1000},
-  {0x72e9u, len_g072e9, 9, seg_g072e9, 19, 1000},
+  {0x72e9u, len_g072e9, 9, seg_g072e9, 20, 1000},
   {0x9996u, len_g09996, 9, seg_g09996, 16, 1000},
   {0x6b8au, len_g06b8a, 10, seg_g06b8a, 22, 1000},
   {0x73e0u, len_g073e0, 10, seg_g073e0, 18, 1000},
@@ -63434,7 +63448,7 @@ static const GlyphData kGlyphs[] = {
   {0x6f38u, len_g06f38, 14, seg_g06f38, 24, 1000},
   {0x81b3u, len_g081b3, 16, seg_g081b3, 26, 1000},
   {0x7e55u, len_g07e55, 18, seg_g07e55, 31, 1000},
-  {0x72d9u, len_g072d9, 8, seg_g072d9, 19, 1000},
+  {0x72d9u, len_g072d9, 8, seg_g072d9, 22, 1000},
   {0x963bu, len_g0963b, 8, seg_g0963b, 17, 1000},
   {0x7956u, len_g07956, 9, seg_g07956, 17, 1000},
   {0x79dfu, len_g079df, 10, seg_g079df, 18, 1000},
@@ -63785,7 +63799,7 @@ static const GlyphData kGlyphs[] = {
   {0x5fb3u, len_g05fb3, 14, seg_g05fb3, 27, 1000},
   {0x7be4u, len_g07be4, 16, seg_g07be4, 25, 1000},
   {0x6bd2u, len_g06bd2, 8, seg_g06bd2, 26, 1000},
-  {0x72ecu, len_g072ec, 9, seg_g072ec, 21, 1000},
+  {0x72ecu, len_g072ec, 9, seg_g072ec, 23, 1000},
   {0x8aadu, len_g08aad, 14, seg_g08aad, 27, 1000},
   {0x6803u, len_g06803, 9, seg_g06803, 19, 1000},
   {0x51f8u, len_g051f8, 5, seg_g051f8, 12, 1000},
@@ -63888,7 +63902,7 @@ static const GlyphData kGlyphs[] = {
   {0x53cdu, len_g053cd, 4, seg_g053cd, 15, 1000},
   {0x534au, len_g0534a, 5, seg_g0534a, 9, 1000},
   {0x6c3eu, len_g06c3e, 5, seg_g06c3e, 16, 1000},
-  {0x72afu, len_g072af, 5, seg_g072af, 22, 1000},
+  {0x72afu, len_g072af, 5, seg_g072af, 24, 1000},
   {0x5e06u, len_g05e06, 6, seg_g05e06, 20, 1000},
   {0x6c4eu, len_g06c4e, 6, seg_g06c4e, 16, 1000},
   {0x4f34u, len_g04f34, 7, seg_g04f34, 14, 1000},
@@ -63958,7 +63972,7 @@ static const GlyphData kGlyphs[] = {
   {0x79d2u, len_g079d2, 9, seg_g079d2, 21, 1000},
   {0x75c5u, len_g075c5, 10, seg_g075c5, 21, 1000},
   {0x63cfu, len_g063cf, 11, seg_g063cf, 22, 1000},
-  {0x732bu, len_g0732b, 11, seg_g0732b, 23, 1000},
+  {0x732bu, len_g0732b, 11, seg_g0732b, 25, 1000},
   {0x54c1u, len_g054c1, 9, seg_g054c1, 18, 1000},
   {0x6d5cu, len_g06d5c, 10, seg_g06d5c, 17, 1000},
   {0x8ca7u, len_g08ca7, 11, seg_g08ca7, 24, 1000},
@@ -63991,7 +64005,7 @@ static const GlyphData kGlyphs[] = {
   {0x8b5cu, len_g08b5c, 19, seg_g08b5c, 32, 1000},
   {0x4faeu, len_g04fae, 8, seg_g04fae, 23, 1000},
   {0x6b66u, len_g06b66, 8, seg_g06b66, 18, 1000},
-  {0x90e8u, len_g090e8, 11, seg_g090e8, 22, 1000},
+  {0x90e8u, len_g090e8, 11, seg_g090e8, 23, 1000},
   {0x821eu, len_g0821e, 15, seg_g0821e, 30, 1000},
   {0x5c01u, len_g05c01, 9, seg_g05c01, 16, 1000},
   {0x98a8u, len_g098a8, 9, seg_g098a8, 25, 1000},
@@ -64175,7 +64189,7 @@ static const GlyphData kGlyphs[] = {
   {0x5984u, len_g05984, 6, seg_g05984, 20, 1000},
   {0x76f2u, len_g076f2, 8, seg_g076f2, 14, 1000},
   {0x8017u, len_g08017, 10, seg_g08017, 24, 1000},
-  {0x731bu, len_g0731b, 11, seg_g0731b, 27, 1000},
+  {0x731bu, len_g0731b, 11, seg_g0731b, 29, 1000},
   {0x7db2u, len_g07db2, 14, seg_g07db2, 31, 1000},
   {0x76eeu, len_g076ee, 5, seg_g076ee, 8, 1000},
   {0x9ed9u, len_g09ed9, 15, seg_g09ed9, 23, 1000},
@@ -64208,7 +64222,7 @@ static const GlyphData kGlyphs[] = {
   {0x60a0u, len_g060a0, 11, seg_g060a0, 26, 1000},
   {0x90f5u, len_g090f5, 11, seg_g090f5, 27, 1000},
   {0x6e67u, len_g06e67, 12, seg_g06e67, 26, 1000},
-  {0x7336u, len_g07336, 12, seg_g07336, 25, 1000},
+  {0x7336u, len_g07336, 12, seg_g07336, 26, 1000},
   {0x88d5u, len_g088d5, 12, seg_g088d5, 24, 1000},
   {0x904au, len_g0904a, 12, seg_g0904a, 34, 1000},
   {0x96c4u, len_g096c4, 12, seg_g096c4, 20, 1000},
@@ -64295,7 +64309,7 @@ static const GlyphData kGlyphs[] = {
   {0x826fu, len_g0826f, 7, seg_g0826f, 15, 1000},
   {0x6599u, len_g06599, 10, seg_g06599, 18, 1000},
   {0x6dbcu, len_g06dbc, 11, seg_g06dbc, 19, 1000},
-  {0x731fu, len_g0731f, 11, seg_g0731f, 28, 1000},
+  {0x731fu, len_g0731f, 11, seg_g0731f, 30, 1000},
   {0x9675u, len_g09675, 11, seg_g09675, 27, 1000},
   {0x91cfu, len_g091cf, 12, seg_g091cf, 22, 1000},
   {0x50dau, len_g050da, 14, seg_g050da, 27, 1000},

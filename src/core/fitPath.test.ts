@@ -149,6 +149,26 @@ describe('fitPointsToStroke', () => {
     });
   });
 
+  describe('前提: 点がちょうど3つ(始点・中間点・終点)で、中間点が鋭く折れている場合', () => {
+    // 数字の"4"(斜め線から横線へ125度ほど折れる)で実際に発生した不具合:
+    // 点が3つしかないと、その3点を通る円は幾何学的に必ず誤差0で
+    // 一致してしまうため、円弧フィッティングでは「本当に丸いのか、単に
+    // 鋭い角なのか」を判別できない。結果、半径は小さいのに円をほぼ1周
+    // するような不自然な円弧(小さなループ)になってしまっていた。
+    it('操作: fitPointsToStrokeする / 期待: 円弧ではなく、中間点で折れた2本の直線になる', () => {
+      const points: Point[] = [
+        { x: 541.67, y: 41.67 },
+        { x: 125, y: 625 }, // 鋭く折れる角
+        { x: 750, y: 625 },
+      ];
+      const stroke = fitPointsToStroke(points, 6);
+      expect(stroke).toEqual([
+        { type: 'line', from: points[0], to: points[1] },
+        { type: 'line', from: points[1], to: points[2] },
+      ]);
+    });
+  });
+
   describe('前提: 直角に折れ曲がる点列(1本の直線・円弧では表現できない)の場合', () => {
     const points: Point[] = [
       { x: 0, y: 0 },
