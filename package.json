@@ -1,0 +1,19 @@
+{
+  "name": "chpath",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "build-glyphs": "tsx scripts/build-glyphs.ts",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.2",
+    "vite": "^6.0.0",
+    "vitest": "^4.1.10"
+  }
+}

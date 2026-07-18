@@ -1,0 +1,114 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, -apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  max-width: 900px;
+}
+
+h1 {
+  margin-bottom: 0.25rem;
+}
+
+.lead {
+  opacity: 0.75;
+  margin-top: 0;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.field.checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+textarea {
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 0.5rem;
+  resize: vertical;
+}
+
+.sliders {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.sliders .field {
+  flex: 1 1 220px;
+}
+
+.stats {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+  min-height: 1.2em;
+}
+
+.svg-container {
+  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.svg-container svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.svg-container .drawing path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.svg-container .travel line {
+  stroke: currentColor;
+  opacity: 0.35;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.svg-container .missing rect {
+  fill: none;
+  stroke: currentColor;
+  opacity: 0.4;
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+footer a {
+  color: inherit;
+}
