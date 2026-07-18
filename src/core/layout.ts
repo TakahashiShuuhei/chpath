@@ -71,6 +71,8 @@ export function layoutText(
     travels,
     missing,
     width: maxX + marginX,
-    height: y + fontSize * 0.6,
+    // 文字は y(上端)から y+fontSize(下端)まで描かれるため、最終行の下端が
+    // 隠れないよう fontSize分を確保した上で少し余白を足す
+    height: y + fontSize * 1.2,
   };
 }

@@ -2,7 +2,8 @@ import './style.css';
 import type { GlyphSource } from './core/types';
 import { fitGlyph } from './core/fitPath';
 import { layoutText } from './core/layout';
-import { renderSvg } from './core/renderSvg';
+import { renderSvg, type ColorMode } from './core/renderSvg';
+import { describeCommands } from './core/describeCommands';
 
 const DEFAULT_TEXT = '常用漢字と英数字を\n直線と円弧に変換する 🤖';
 
@@ -12,7 +13,7 @@ app.innerHTML = `
     <h1>chpath</h1>
     <p class="lead">入力した文字を、ペンプロッタで描けるだけ少ない「直線」と「円弧」の組み合わせに変換します。</p>
 
-    <div class="controls">
+    <section class="panel">
       <label class="field">
         文字列
         <textarea id="text" rows="3">${escapeHtml(DEFAULT_TEXT)}</textarea>
@@ -25,17 +26,39 @@ app.innerHTML = `
         </label>
         <label class="field">
           文字サイズ: <span id="fontSizeValue"></span>
-          <input id="fontSize" type="range" min="24" max="96" step="4" value="48" />
+          <input id="fontSize" type="range" min="24" max="200" step="4" value="48" />
         </label>
+      </div>
+
+      <div class="toggles">
+        <div class="segmented" id="colorModeGroup">
+          <label><input type="radio" name="colorMode" value="black" checked />仕上がり(黒)</label>
+          <label><input type="radio" name="colorMode" value="order" />構造(色分け)</label>
+        </div>
         <label class="field checkbox">
           <input id="showTravel" type="checkbox" checked />
           ペンアップの移動(点線)を表示
         </label>
       </div>
-    </div>
+    </section>
 
     <div id="stats" class="stats"></div>
     <div id="svgContainer" class="svg-container"></div>
+
+    <section class="panel commands">
+      <div class="commands-head">
+        <span>生成された直線・円弧の一覧</span>
+        <button id="copyCommands" type="button">コピー</button>
+      </div>
+      <p class="hint">
+        <code># stroke N</code> はペンを下ろしたまま描き続ける一区切り(ストローク)の開始です。
+        <code>L (x1, y1) -&gt; (x2, y2)</code> は開始点から終了点までの直線、
+        <code>A center=(cx, cy) r=半径 angle=開始-&gt;終了 ccw/cw</code> は中心・半径と、
+        開始角度から終了角度まで反時計回り(ccw)・時計回り(cw)に描く円弧を表します
+        (角度の単位はラジアン、座標・半径の単位はpx)。
+      </p>
+      <textarea id="commandList" readonly rows="8" spellcheck="false"></textarea>
+    </section>
 
     <footer>
       <p>
@@ -54,8 +77,11 @@ const toleranceValueEl = document.querySelector<HTMLSpanElement>('#toleranceValu
 const fontSizeEl = document.querySelector<HTMLInputElement>('#fontSize')!;
 const fontSizeValueEl = document.querySelector<HTMLSpanElement>('#fontSizeValue')!;
 const showTravelEl = document.querySelector<HTMLInputElement>('#showTravel')!;
+const colorModeGroupEl = document.querySelector<HTMLDivElement>('#colorModeGroup')!;
 const statsEl = document.querySelector<HTMLDivElement>('#stats')!;
 const svgContainer = document.querySelector<HTMLDivElement>('#svgContainer')!;
+const commandListEl = document.querySelector<HTMLTextAreaElement>('#commandList')!;
+const copyCommandsEl = document.querySelector<HTMLButtonElement>('#copyCommands')!;
 
 let glyphSources = new Map<string, GlyphSource>();
 
@@ -68,6 +94,14 @@ async function main() {
   for (const el of [textEl, toleranceEl, fontSizeEl, showTravelEl]) {
     el.addEventListener('input', render);
   }
+  colorModeGroupEl.addEventListener('change', render);
+  commandListEl.addEventListener('focus', () => commandListEl.select());
+  copyCommandsEl.addEventListener('click', async () => {
+    await navigator.clipboard.writeText(commandListEl.value);
+    copyCommandsEl.textContent = 'コピーしました';
+    setTimeout(() => (copyCommandsEl.textContent = 'コピー'), 1500);
+  });
+
   render();
 }
 
@@ -75,6 +109,7 @@ function render() {
   const tolerance = Number(toleranceEl.value);
   const fontSize = Number(fontSizeEl.value);
   const showTravel = showTravelEl.checked;
+  const colorMode = (colorModeGroupEl.querySelector('input:checked') as HTMLInputElement).value as ColorMode;
   toleranceValueEl.textContent = String(tolerance);
   fontSizeValueEl.textContent = `${fontSize}px`;
 
@@ -88,7 +123,8 @@ function render() {
   );
 
   const layout = layoutText(text, glyphs, fontSize);
-  svgContainer.innerHTML = renderSvg(layout, { showTravel });
+  svgContainer.innerHTML = renderSvg(layout, { showTravel, colorMode });
+  commandListEl.value = describeCommands(layout);
 
   const lineCount = countByType(layout.strokes, 'line');
   const arcCount = countByType(layout.strokes, 'arc');
