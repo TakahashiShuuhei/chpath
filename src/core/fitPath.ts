@@ -7,6 +7,7 @@ export type RawCubic = { type: 'cubic' } & Cubic;
 export type RawSeg = RawLine | RawCubic;
 
 const SAMPLES_PER_CUBIC = 12;
+const SUBDIVISIONS_PER_LINE = 5;
 const DEDUPE_EPS = 1e-6;
 
 /**
@@ -52,7 +53,16 @@ function flatten(raw: RawSeg[]): Point[] {
   const points: Point[] = [raw[0].from];
   for (const r of raw) {
     if (r.type === 'line') {
-      points.push(r.to);
+      // 直線区間も細かく分割して点を補う。元データの点数が少ない場合
+      // (Hershey等)、区間の「途中」に誤差チェック用の点が無いと、
+      // 両端の2〜3点だけを通る円弧が誤差0で「完璧に一致」してしまい、
+      // 実際には点と点の間で大きく膨らんだり、鋭い角を滑らかな弧に
+      // すり替えてしまったりする(点が足りないと直線と円は3点あれば
+      // 必ず区別なく通ってしまうため)。
+      for (let i = 1; i <= SUBDIVISIONS_PER_LINE; i++) {
+        const t = i / SUBDIVISIONS_PER_LINE;
+        points.push({ x: r.from.x + (r.to.x - r.from.x) * t, y: r.from.y + (r.to.y - r.from.y) * t });
+      }
     } else {
       const samples = sampleCubic(r, SAMPLES_PER_CUBIC);
       for (let i = 1; i < samples.length; i++) points.push(samples[i]);

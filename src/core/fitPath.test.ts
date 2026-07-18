@@ -1,19 +1,31 @@
 import { describe, expect, it } from 'vitest';
 import { fitGlyph, fitPointsToStroke, flattenStroke, type RawSeg } from './fitPath';
-import { segEnd, segStart, type ArcSeg, type GlyphSource, type Point } from './types';
+import { dist, segEnd, segStart, type ArcSeg, type GlyphSource, type Point } from './types';
 
 describe('flattenStroke', () => {
   describe('前提: 直線セグメントのみで構成されるサブパスの場合', () => {
-    it('操作: 平坦化する / 期待: 各セグメントの端点がそのまま点列になる(重複する接続点は1つにまとまる)', () => {
+    it('操作: 平坦化する / 期待: 各セグメントの両端点(始点・接続点・終点)が点列に含まれる', () => {
       const raw: RawSeg[] = [
         { type: 'line', from: { x: 0, y: 0 }, to: { x: 10, y: 0 } },
         { type: 'line', from: { x: 10, y: 0 }, to: { x: 10, y: 10 } },
       ];
-      expect(flattenStroke(raw)).toEqual([
-        { x: 0, y: 0 },
-        { x: 10, y: 0 },
-        { x: 10, y: 10 },
-      ]);
+      const points = flattenStroke(raw);
+      expect(points[0]).toEqual({ x: 0, y: 0 });
+      expect(points).toContainEqual({ x: 10, y: 0 });
+      expect(points[points.length - 1]).toEqual({ x: 10, y: 10 });
+    });
+
+    it('期待: 各直線区間は誤差チェック用に途中の点も補われ、端点だけの粗い点列にはならない', () => {
+      // 元データの点数が少ないと、両端2点だけを通る円弧が常に「誤差0」に
+      // なってしまい、実際には点の間で膨らんだり鋭い角が滑らかな弧に
+      // すり替わったりする不具合があったため、直線区間も分割して
+      // 途中の点を補うようにしている。
+      const raw: RawSeg[] = [{ type: 'line', from: { x: 0, y: 0 }, to: { x: 10, y: 0 } }];
+      const points = flattenStroke(raw);
+      expect(points.length).toBeGreaterThan(2);
+      for (const p of points) {
+        expect(p.y).toBeCloseTo(0); // 補間点も元の直線上にある
+      }
     });
   });
 
@@ -41,10 +53,13 @@ describe('flattenStroke', () => {
         { type: 'line', from: { x: 0, y: 0 }, to: { x: 5, y: 5 } },
         { type: 'line', from: { x: 5, y: 5 }, to: { x: 5, y: 5 } },
       ];
-      expect(flattenStroke(raw)).toEqual([
-        { x: 0, y: 0 },
-        { x: 5, y: 5 },
-      ]);
+      const points = flattenStroke(raw);
+      // 2本目は長さ0なので、末尾に(5,5)の重複が連続するだけで新しい点は増えない
+      expect(points[0]).toEqual({ x: 0, y: 0 });
+      expect(points[points.length - 1]).toEqual({ x: 5, y: 5 });
+      for (let i = 1; i < points.length; i++) {
+        expect(dist(points[i - 1], points[i])).toBeGreaterThan(0);
+      }
     });
   });
 });
