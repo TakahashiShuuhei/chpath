@@ -8,6 +8,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "build-glyphs": "tsx scripts/build-glyphs.ts",
+    "export-cpp": "tsx scripts/export-cpp.ts",
     "test": "vitest run"
   },
   "devDependencies": {
