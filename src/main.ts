@@ -11,7 +11,7 @@ const app = document.querySelector<HTMLDivElement>('#app')!;
 app.innerHTML = `
   <main>
     <h1>chpath</h1>
-    <p class="lead">入力した文字を、ペンプロッタで描けるだけ少ない「直線」と「円弧」の組み合わせに変換します。</p>
+    <p class="lead">入力した文字を、ペンプロッタで描けるように、できるだけ少ない「直線」と「円弧」の組み合わせに変換します。</p>
 
     <section class="panel">
       <label class="field">
